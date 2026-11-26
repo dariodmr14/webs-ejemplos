@@ -1,0 +1,153 @@
+/* Hallmark · custom · genre: modern-minimal · Vereda Clara (podología) · clinical white, petrol teal, hairlines · Albert Sans light · hero: counter, booking widget is the visual · signature: working booking mock */
+@font-face { font-family: "Albert Sans"; src: url("fonts/albert-300_600.woff2") format("woff2"); font-weight: 300 600; font-display: swap; }
+
+:root {
+  --color-paper: oklch(98.2% 0.005 215);
+  --color-paper-2: oklch(95.2% 0.014 205);
+  --color-card: oklch(99.6% 0.002 215);
+  --color-ink: oklch(26% 0.040 232);
+  --color-ink-2: oklch(38% 0.034 230);
+  --color-muted: oklch(48% 0.030 228);
+  --color-rule: oklch(88% 0.018 215);
+  --color-field: oklch(62% 0.035 218);
+  --color-accent: oklch(46% 0.085 205);
+  --color-accent-hover: oklch(38% 0.075 208);
+  --color-accent-ink: oklch(98.5% 0.006 200);
+  --color-focus: oklch(52% 0.130 215);
+  --font-body: "Albert Sans", system-ui, sans-serif;
+  --radius: 8px;
+  --wrap: 1200px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --section: clamp(64px, 9vw, 128px);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink-2); font: 400 1.0625rem/1.6 var(--font-body); scrollbar-color: var(--color-field) var(--color-paper); }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { margin: 0; color: var(--color-ink); text-wrap: balance; overflow-wrap: break-word; font-weight: 300; }
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.04; letter-spacing: -0.03em; }
+h2 { font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.12; letter-spacing: -0.02em; }
+h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+::selection { background: var(--color-paper-2); }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+.lead { font-size: 1.25rem; margin-top: 16px; }
+.skip { position: absolute; left: 8px; top: 8px; z-index: 600; background: var(--color-card); padding: 8px 16px; transform: translateY(-200%); }
+.skip:focus { transform: none; }
+.demo { text-align: center; font-size: 0.875rem; padding: 8px 16px; background: var(--color-paper-2); border-bottom: 1px solid var(--color-rule); }
+.demo a { font-weight: 600; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border: 1px solid var(--color-accent); border-radius: var(--radius); background: var(--color-accent); color: var(--color-accent-ink); font: 600 1rem/1.2 var(--font-body); text-decoration: none; text-align: center; cursor: pointer; transition: background-color 180ms var(--ease-out), transform 120ms var(--ease-out); }
+.btn:hover { background: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn--quiet { background: transparent; color: var(--color-ink); border-color: var(--color-field); }
+.btn--quiet:hover { background: var(--color-paper-2); border-color: var(--color-ink); }
+
+.brand { font: 600 1.35rem/1.2 var(--font-body); letter-spacing: -0.01em; color: var(--color-ink); text-decoration: none; }
+.brand span { font-weight: 300; }
+.top { border-bottom: 1px solid var(--color-rule); }
+.top__in { display: flex; align-items: center; gap: 32px; min-height: 72px; }
+.top nav { display: flex; gap: 32px; margin-inline: auto; }
+.top nav a { text-decoration: none; padding: 8px 0; }
+.top nav a:hover { text-decoration: underline; }
+.top__tel { font-weight: 600; color: var(--color-ink); padding: 8px 0; white-space: nowrap; }
+
+.hero { padding-block: clamp(32px, 5vw, 64px) var(--section); }
+.hero__in { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.hero__text { padding-top: 24px; }
+.hero__text .lead { margin-bottom: 32px; }
+.facts { margin: 56px 0 0; }
+.facts div { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 16px; padding-block: 16px; border-top: 1px solid var(--color-rule); }
+.facts dt { color: var(--color-muted); }
+.facts dd { margin: 0; color: var(--color-ink); }
+
+.booking { background: var(--color-card); border: 1px solid var(--color-rule); border-radius: calc(var(--radius) * 2); padding: clamp(20px, 3vw, 32px); }
+.booking h2 { font-size: 1.75rem; }
+.booking fieldset { border: 0; padding: 0; margin: 24px 0 0; min-width: 0; }
+.booking legend, .field label { padding: 0; margin-bottom: 8px; font-weight: 600; color: var(--color-ink); display: block; }
+.options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.days { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.slots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.options label, .days label, .slots label { position: relative; display: block; cursor: pointer; }
+.booking input[type="radio"] { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.booking label span { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 48px; height: 100%; padding: 8px; border: 1px solid var(--color-rule); border-radius: var(--radius); text-align: center; line-height: 1.3; color: var(--color-ink); transition: background-color 150ms var(--ease-out); }
+.options label span { align-items: flex-start; text-align: left; padding: 8px 12px; }
+.booking small { font-size: 0.8125rem; color: var(--color-muted); }
+.booking label:hover span { border-color: var(--color-accent); }
+.booking input:checked + span { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.booking input:checked + span small { color: var(--color-accent-ink); }
+.booking input:focus-visible + span { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.nojs { grid-column: 1 / -1; }
+.field { margin-top: 24px; }
+.field input { width: 100%; min-height: 48px; padding: 0 16px; border: 1px solid var(--color-field); border-radius: var(--radius); background: var(--color-card); color: var(--color-ink); font: 400 1rem var(--font-body); }
+.field input[aria-invalid="true"] { border-color: var(--color-ink); outline: 1px solid var(--color-ink); }
+.booking .btn { width: 100%; margin-top: 16px; }
+.booking__msg { margin-top: 12px; font-size: 0.875rem; color: var(--color-muted); min-height: 3.2em; }
+.booking__msg.is-answer { color: var(--color-ink); font-size: 1rem; background: var(--color-paper-2); border-radius: var(--radius); padding: 12px 16px; }
+
+.treat { background: var(--color-card); border-block: 1px solid var(--color-rule); padding-block: var(--section); }
+.treat .head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 32px; margin-bottom: 40px; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 20px 16px 20px 0; border-bottom: 1px solid var(--color-rule); }
+thead th { font-weight: 400; font-size: 0.9375rem; color: var(--color-muted); border-bottom-color: var(--color-field); padding-block: 12px; }
+tbody th { font-weight: 600; font-size: 1.1875rem; color: var(--color-ink); }
+td:last-child, th:last-child { text-align: right; padding-right: 0; white-space: nowrap; }
+
+.walk figure { margin: 0; height: clamp(320px, 52vw, 640px); overflow: hidden; background: var(--color-paper-2); }
+.walk img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 65%; }
+.walk h2 { padding-block: clamp(40px, 6vw, 80px) 0; max-width: 24ch; font-size: clamp(2rem, 4.4vw, 3.5rem); }
+
+.two { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.first { padding-block: var(--section); }
+.first ol { list-style: none; counter-reset: p; margin: 0; padding: 0; }
+.first li { counter-increment: p; display: grid; grid-template-columns: 4rem minmax(0, 1fr); padding-block: 24px; border-top: 1px solid var(--color-rule); }
+.first li::before { content: counter(p); grid-row: span 2; font: 300 2.5rem/1 var(--font-body); color: var(--color-accent); }
+.first li p { margin-top: 4px; }
+
+.faq { background: var(--color-paper-2); padding-block: var(--section); }
+details { border-bottom: 1px solid var(--color-field); }
+details:first-child { border-top: 1px solid var(--color-field); }
+summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 72px; padding-block: 12px; cursor: pointer; list-style: none; font-size: 1.1875rem; font-weight: 600; color: var(--color-ink); }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-weight: 300; font-size: 1.75rem; line-height: 1; transition: transform 180ms var(--ease-out); }
+details[open] summary::after { transform: rotate(45deg); }
+details p { padding-bottom: 24px; max-width: 60ch; }
+
+.contact { padding-block: var(--section); }
+address { font-style: normal; font-size: 1.25rem; color: var(--color-ink); margin: 24px 0 8px; }
+.big { font: 300 clamp(2.4rem, 6vw, 4.5rem)/1.1 var(--font-body); letter-spacing: -0.02em; color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.big:hover { text-decoration: underline; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+.foot { border-top: 1px solid var(--color-rule); padding-block: 48px; font-size: 0.9375rem; }
+.foot p + p { margin-top: 12px; max-width: 72ch; }
+.credits { color: var(--color-muted); font-size: 0.8125rem; }
+
+@media (max-width: 60rem) {
+  .hero__in, .two { grid-template-columns: minmax(0, 1fr); }
+  .top__in { justify-content: space-between; }
+  .top nav { display: none; }
+  .hero__text { padding-top: 0; }
+  .facts { margin-top: 32px; }
+}
+@media (max-width: 40rem) {
+  .days { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .slots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding-block: 16px; border-bottom: 1px solid var(--color-rule); }
+  tbody th, tbody td { border: 0; padding: 0; }
+  tbody th { grid-area: 1 / 1; }
+  tbody td:nth-child(2) { grid-area: 2 / 1 / 3 / 3; }
+  tbody td:nth-child(3) { grid-area: 3 / 1; color: var(--color-muted); }
+  tbody td:last-child { grid-area: 1 / 2; font-weight: 600; color: var(--color-ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .booking label span, summary::after { transition: none; }
+}
