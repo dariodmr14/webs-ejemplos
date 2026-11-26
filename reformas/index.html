@@ -60,8 +60,14 @@
           <img class="compare__before" src="img/antes-1200.webp" srcset="img/antes-700.webp 700w, img/antes-1200.webp 1200w, img/antes-1800.webp 1800w" sizes="(min-width: 80rem) 1200px, 100vw" width="1200" height="800" alt="Antes: baño con azulejo verde, lavabo manchado y suelo viejo" loading="lazy">
           <span class="compare__tag compare__tag--before" aria-hidden="true">Antes</span>
           <span class="compare__tag compare__tag--after" aria-hidden="true">Después</span>
+          <span class="compare__handle" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24"><path d="M13 5 5 12l8 7M27 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
           <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después: porcentaje de la foto de antes">
         </figure>
+        <div class="compare__keys" hidden>
+          <button type="button" data-corte="100">Ver el antes</button>
+          <button type="button" data-corte="50">Mitad y mitad</button>
+          <button type="button" data-corte="0">Ver el después</button>
+        </div>
         <dl class="specs">
           <div><dt>Qué se hizo</dt><dd>Fuera azulejo, paredes alisadas, suelo, mueble de lavabo y sanitarios</dd></div>
           <div><dt>Plazo de obra</dt><dd>Tres semanas</dd></div>

@@ -1,7 +1,41 @@
 // Antes y después: el deslizador mueve el corte entre las dos fotos.
 const comparador = document.querySelector('.compare');
 const deslizador = comparador.querySelector('input');
-deslizador.addEventListener('input', () => comparador.style.setProperty('--corte', deslizador.value));
+const mover = (valor) => {
+  deslizador.value = valor;
+  comparador.style.setProperty('--corte', valor);
+};
+let animacion = 0;
+const parar = () => cancelAnimationFrame(animacion);
+const ir = (destino, ms = 350) => {
+  parar();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return mover(destino);
+  const origen = Number(deslizador.value);
+  const inicio = performance.now();
+  const paso = (ahora) => {
+    const t = Math.min(1, (ahora - inicio) / ms);
+    mover(origen + (destino - origen) * (1 - (1 - t) ** 3));
+    if (t < 1) animacion = requestAnimationFrame(paso);
+  };
+  animacion = requestAnimationFrame(paso);
+};
+deslizador.addEventListener('input', () => { parar(); mover(deslizador.value); });
+deslizador.addEventListener('pointerdown', parar);
+
+const botones = document.querySelector('.compare__keys');
+botones.hidden = false;
+botones.addEventListener('click', (e) => {
+  if (e.target.dataset.corte) ir(Number(e.target.dataset.corte));
+});
+
+// La primera vez que se ve, la línea se mueve sola para que se entienda que se arrastra.
+new IntersectionObserver(([entrada], observador) => {
+  if (!entrada.isIntersecting) return;
+  observador.disconnect();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  ir(75, 700);
+  setTimeout(() => { if (Math.round(deslizador.value) === 75) ir(50, 700); }, 800);
+}, { threshold: 0.6 }).observe(comparador);
 
 // Formulario de ejemplo: valida, pero no envía nada.
 const form = document.querySelector('form');
