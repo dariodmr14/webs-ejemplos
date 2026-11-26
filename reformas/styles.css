@@ -185,3 +185,20 @@ form .btn:hover { background: var(--color-slate-2); }
   html { scroll-behavior: auto; }
   .btn, .compare__handle { transition: none; }
 }
+
+/* Táctil */
+a, button, summary, label, input, select { touch-action: manipulation; }
+html { -webkit-tap-highlight-color: transparent; }
+
+.bar { display: none; }
+@media (max-width: 60rem) {
+  .bar { display: grid; grid-template-columns: 2fr 1fr; gap: 8px; position: fixed; inset: auto 0 0 0; z-index: 300; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--color-slate); border-top: 1px solid var(--color-slate-2); }
+  .bar .btn { width: 100%; margin: 0; padding-inline: 8px; }
+  html { scroll-padding-bottom: 96px; }
+  .foot { padding-bottom: 120px; }
+}
+.bar__call { background: transparent; border-color: var(--color-white); color: var(--color-white); }
+.bar__call:hover { background: var(--color-slate-2); border-color: var(--color-white); }
+@media (max-width: 60rem) {
+  .top__in .btn--small { display: none; }
+}

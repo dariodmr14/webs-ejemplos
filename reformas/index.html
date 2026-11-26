@@ -26,7 +26,7 @@
 
   <header class="top">
     <div class="wrap top__in">
-      <a class="brand" href="#contenido">Llábana <span>reformas</span></a>
+      <a class="brand" translate="no" href="#contenido">Llábana <span>reformas</span></a>
       <nav aria-label="Principal">
         <a href="#obras">Obras</a>
         <a href="#precios">Precios</a>
@@ -110,9 +110,9 @@
           <h2 id="pr-t">Cuánto cuesta</h2>
           <p class="lead">Precios de ejemplo para que te hagas una idea.</p>
           <dl class="from">
-            <div><dt>Baño completo</dt><dd>desde 4.800 €</dd></div>
-            <div><dt>Cocina</dt><dd>desde 8.500 €</dd></div>
-            <div><dt>Piso entero</dt><dd>desde 850 €/m²</dd></div>
+            <div><dt>Baño completo</dt><dd>desde 4.800&nbsp;€</dd></div>
+            <div><dt>Cocina</dt><dd>desde 8.500&nbsp;€</dd></div>
+            <div><dt>Piso entero</dt><dd>desde 850&nbsp;€/m²</dd></div>
           </dl>
         </div>
         <div class="includes">
@@ -201,15 +201,15 @@
           <div class="row">
             <div class="field">
               <label for="nombre">Nombre</label>
-              <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="aviso" required>
             </div>
             <div class="field">
               <label for="tel">Teléfono</label>
-              <input id="tel" name="tel" type="tel" autocomplete="tel" required>
+              <input id="tel" name="tel" type="tel" autocomplete="tel" aria-describedby="aviso" required>
             </div>
           </div>
           <button class="btn" type="submit">Enviar solicitud</button>
-          <p class="msg" role="status" aria-live="polite">Formulario de ejemplo: no se envía ni se guarda nada.</p>
+          <p class="msg" id="aviso" role="status" aria-live="polite">Formulario de ejemplo: no se envía ni se guarda nada.</p>
         </form>
       </div>
     </section>
@@ -217,11 +217,16 @@
 
   <footer class="foot">
     <div class="wrap">
-      <p class="brand">Llábana <span>reformas</span></p>
+      <p class="brand" translate="no">Llábana <span>reformas</span></p>
       <p>Web de ejemplo hecha por Darío Morales Riega. Llábana no existe: nombre, dirección, teléfonos, obras y plazos son inventados. En la web real irían el aviso legal y la privacidad.</p>
       <p class="credits" data-credits>Fotografías: <a href="https://commons.wikimedia.org/wiki/File:Kitchen_layout_inside_new_two-bedroom_seasonal_housing_unit_(50343213866).jpg">YellowstoneNPS</a> (cocina), <a href="https://commons.wikimedia.org/wiki/File:Seasonal_employee_housing_bathroom_before_renovation_(50014558717).jpg">YellowstoneNPS</a> (antes), <a href="https://commons.wikimedia.org/wiki/File:Seasonal_employee_housing_bathroom_after_renovation_(50014557962).jpg">YellowstoneNPS</a> (después), las tres de dominio público; <a href="https://commons.wikimedia.org/wiki/File:Modern_kitchen_and_dining_area_in_a_simple_home_setting_showing_light_colors_and_minimal_decor.jpg">Shixart1985</a> (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:Using_a_trowel_to_lay_floor_tiles.jpg">Francisco Gonzalez</a> (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:US_Navy_070721-N-9195K-055_Steelworker_3rd_Class_Jason_Tinkman_of_Navy_Mobile_Construction_Battalion_(NMCB)_7_lays_down_grout_before_placing_floor_tiles_during_an_engineering_civic_action_program_conducted_at_An_Khe_Clinic_in_s.jpg">U.S. Navy</a> (dominio público). Redimensionadas y recortadas.</p>
     </div>
   </footer>
+
+  <div class="bar">
+    <a class="btn" href="#presupuesto">Pedir presupuesto</a>
+    <a class="btn bar__call" href="tel:+34985000002">Llamar</a>
+  </div>
 
   <script src="main.js" defer></script>
 </body>

@@ -151,8 +151,13 @@ address { font: 400 1.5rem/1.45 var(--font-display); color: var(--color-ink); ma
   .photo { aspect-ratio: 4 / 3; }
   .bar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; inset: auto 0 0 0; z-index: 300; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--color-card); border-top: 1px solid var(--color-rule); }
   .foot { padding-bottom: 120px; }
+  html { scroll-padding-bottom: 96px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* Táctil */
+a, button, summary, label, input, select { touch-action: manipulation; }
+html { -webkit-tap-highlight-color: transparent; }
