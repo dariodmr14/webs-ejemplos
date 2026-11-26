@@ -202,15 +202,3 @@ html { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 60rem) {
   .top__in .btn--small { display: none; }
 }
-
-/* «Leer más» para el dueño del negocio */
-.why { background: var(--color-white); border-block: 1px solid var(--color-rule); color: var(--color-ink-2); }
-.why details { border: 0; margin: 0; }
-.why summary { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 16px; min-height: 64px; padding-block: 12px; cursor: pointer; list-style: none; font-size: 1.0625rem; font-weight: 600; color: var(--color-ink); }
-.why summary::-webkit-details-marker { display: none; }
-.why summary::after { content: none; }
-.why__more { text-decoration: underline; text-underline-offset: 3px; font-weight: 400; }
-.why details[open] .why__more { visibility: hidden; }
-.why dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 24px 40px; margin: 0; padding-block: 8px 32px; }
-.why dt { font-weight: 700; color: var(--color-ink); }
-.why dd { margin: 4px 0 0; }

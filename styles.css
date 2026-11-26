@@ -42,10 +42,13 @@ a { color: inherit; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
 .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 20px; }
-.name { font-weight: 600; font-size: 1.2rem; color: var(--color-ink); }
+.me { display: flex; align-items: center; gap: 18px; min-width: 0; animation: fade 600ms var(--ease-out) backwards; }
+.me img { width: 96px; height: 96px; flex-shrink: 0; border-radius: 50%; border: 3px solid var(--color-accent); background: var(--color-paper-2); }
+.name { font-weight: 600; font-size: 1.4rem; line-height: 1.25; color: var(--color-ink); }
+.role { max-width: 36ch; margin-top: 4px; line-height: 1.4; }
 .top nav { display: flex; gap: 8px; }
 
-.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 32px; align-items: center; min-height: min(760px, calc(100svh - 90px)); padding-block: 24px 64px; }
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 32px; align-items: center; min-height: min(720px, calc(100svh - 140px)); padding-block: 24px 64px; }
 h1 { font-size: clamp(3rem, 7.2vw, 6.25rem); font-weight: 600; line-height: 1; letter-spacing: -0.04em; }
 h1 em { font-style: normal; color: var(--color-accent); }
 .line { display: block; overflow: clip; padding-bottom: 0.08em; }
@@ -105,7 +108,8 @@ details dd { margin: 2px 0 0; }
 .faq details { margin: 0; border-block: 0; border-bottom: 1px solid var(--color-rule); }
 .faq details p { padding-bottom: 20px; max-width: 60ch; }
 .ask { margin-top: 16px; font-size: 1.2rem; }
-.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; padding-block: 56px; border-top: 1px solid var(--color-rule); }
+.portrait { width: 220px; height: 220px; border-radius: 24px; }
+.about { display: grid; grid-template-columns: minmax(0, 3fr) 220px minmax(0, 5fr); align-items: start; gap: 40px; padding-block: 56px; border-top: 1px solid var(--color-rule); }
 .about p { max-width: 56ch; font-size: 1.25rem; color: var(--color-ink); }
 .about p + p { margin-top: 16px; color: var(--color-ink-2); }
 .close { text-align: center; padding-block: 96px; border-top: 1px solid var(--color-rule); }
@@ -131,10 +135,16 @@ details dd { margin: 2px 0 0; }
   .work--flip .peek { order: 0; }
   .hero { min-height: 0; padding-block: 32px; }
   .work { margin-top: 56px; }
+  .portrait { width: 180px; height: 180px; }
   .faq { grid-template-columns: minmax(0, 1fr); }
   .gets ul, .steps ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 40rem) {
+  .me { gap: 14px; }
+  .me img { width: 72px; height: 72px; }
+  .name { font-size: 1.2rem; }
+  .role { font-size: 0.9375rem; }
+  .top nav, .top nav .btn { width: 100%; }
   .gets ul, .steps ol { grid-template-columns: minmax(0, 1fr); }
   .btn--big { width: 100%; }
 }
