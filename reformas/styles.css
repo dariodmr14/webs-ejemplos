@@ -108,6 +108,15 @@ a { color: inherit; text-underline-offset: 3px; }
 .work--note { grid-column: span 2; justify-content: space-between; align-items: flex-start; gap: 24px; padding: 32px; background: var(--color-slate-2); }
 .work--note p { font-size: 1.6rem; font-weight: 700; font-stretch: 112%; line-height: 1.25; color: var(--color-white); }
 
+.prices { padding-block: var(--section) 0; }
+.from { margin: 32px 0 0; }
+.from div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; border-top: 2px solid var(--color-ink); padding-block: 16px; }
+.from dd { margin: 0; font-weight: 800; font-stretch: 112%; font-size: 1.35rem; color: var(--color-ink); }
+.includes { background: var(--color-slate); color: var(--color-on-slate); padding: clamp(24px, 4vw, 48px); }
+.includes h3 { color: var(--color-white); font-size: 1.5rem; }
+.includes ul { list-style: square; padding-left: 20px; margin: 24px 0 0; }
+.includes li { padding-block: 8px; }
+.includes li::marker { color: var(--color-accent); }
 .process { padding-block: var(--section); }
 .process ol { list-style: none; counter-reset: fase; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
 .process li { counter-increment: fase; border-top: 8px solid var(--color-ink); padding-top: 16px; }

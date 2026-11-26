@@ -63,7 +63,9 @@ a { color: inherit; text-underline-offset: 3px; }
 .hero__in { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
 .hero__text { padding-top: 24px; }
 .hero__text .lead { margin-bottom: 32px; }
-.facts { margin: 56px 0 0; }
+.urgent { background: var(--color-paper-2); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; color: var(--color-ink); }
+.urgent a { font-weight: 600; white-space: nowrap; }
+.facts { margin: 40px 0 0; }
 .facts div { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 16px; padding-block: 16px; border-top: 1px solid var(--color-rule); }
 .facts dt { color: var(--color-muted); }
 .facts dd { margin: 0; color: var(--color-ink); }
