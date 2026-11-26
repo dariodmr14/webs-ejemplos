@@ -90,6 +90,19 @@ details dl { margin: 0; padding-bottom: 8px; }
 details dl div { padding-block: 8px; }
 details dt { color: var(--color-ink); font-weight: 600; }
 details dd { margin: 2px 0 0; }
+.gets, .steps, .faq { padding-block: 72px; border-top: 1px solid var(--color-rule); }
+.gets ul, .steps ol { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 40px; }
+.gets h3, .steps h3 { font-size: 1.35rem; font-weight: 600; }
+.gets p, .steps p { margin-top: 8px; }
+.gets li { border-top: 2px solid var(--color-rule); padding-top: 16px; transition: border-color 250ms var(--ease-out); }
+.gets li:hover { border-color: var(--color-accent); }
+.steps ol { counter-reset: paso; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.steps li { counter-increment: paso; }
+.steps li::before { content: counter(paso); display: block; margin-bottom: 16px; color: var(--color-accent); font-size: 3.5rem; font-weight: 300; line-height: 1; }
+.faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; align-items: start; }
+.faq details { margin: 0; border-block: 0; border-bottom: 1px solid var(--color-rule); }
+.faq details p { padding-bottom: 20px; max-width: 60ch; }
+.ask { margin-top: 16px; font-size: 1.2rem; }
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; padding-block: 56px; border-top: 1px solid var(--color-rule); }
 .about p { max-width: 56ch; font-size: 1.25rem; color: var(--color-ink); }
 .about p + p { margin-top: 16px; color: var(--color-ink-2); }
@@ -102,7 +115,7 @@ details dd { margin: 2px 0 0; }
 /* Las secciones aparecen al hacer scroll, donde el navegador lo permite. */
 @supports (animation-timeline: view()) {
   .work { animation: appear linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
-  @keyframes appear { from { opacity: 0.15; translate: 0 48px; } }
+  @keyframes appear { from { translate: 0 48px; } }
   /* En pantallas táctiles no hay hover: la web de dentro avanza con el scroll. */
   @media (hover: none) {
     .peek { view-timeline-name: --peek; }
@@ -116,6 +129,12 @@ details dd { margin: 2px 0 0; }
   .work--flip .peek { order: 0; }
   .hero { min-height: 0; padding-block: 32px; }
   .work { margin-top: 56px; }
+  .faq { grid-template-columns: minmax(0, 1fr); }
+  .gets ul, .steps ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .gets ul, .steps ol { grid-template-columns: minmax(0, 1fr); }
+  .btn--big { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
